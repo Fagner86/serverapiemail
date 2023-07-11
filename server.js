@@ -3,7 +3,7 @@ const cors = require('cors');
 const sgMail = require('@sendgrid/mail');
 
 const app = express();
-sgMail.setApiKey('');
+sgMail.setApiKey('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');
 
 app.use(cors()); // Adicione essa linha antes das rotas
 app.use(express.json()); // Para analisar JSON no corpo da solicitação
