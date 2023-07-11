@@ -3,7 +3,7 @@ const cors = require('cors');
 const sgMail = require('@sendgrid/mail');
 
 const app = express();
-sgMail.setApiKey('process.env.SENDGRID_API_KEY');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.use(cors()); // Adicione essa linha antes das rotas
 app.use(express.json()); // Para analisar JSON no corpo da solicitação
@@ -37,6 +37,6 @@ app.post('/send-email', async (req, res) => {
 });
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log('Servidor iniciado na porta 4000');
 });
