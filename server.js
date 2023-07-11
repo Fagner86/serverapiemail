@@ -16,7 +16,8 @@ app.post('/send-email', async (req, res) => {
     console.log(email);
 
     // Aqui pode usar as datas e horas da reserva para personalizar o conteúdo do email
-    const mensagem = `Sua reserva foi confirmada para o período de ${date} as ${startTime} até ${endDate} as ${endTime}.`;
+    const mensagem = `Sua reserva foi confirmada para o período de 
+    ${date} as ${startTime} até ${endDate} as ${endTime}.`;
 
     const msg = {
       to: email,
