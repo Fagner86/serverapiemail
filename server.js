@@ -20,7 +20,7 @@ app.post('/send-email', async (req, res) => {
 
 
   try {
-    const { email, date, endDate, startTime, endTime } = req.body;
+    const { email, date, endDate, startTime, endTime, nomeReserva} = req.body;
 
     const startDateArray = date.split('-').map(Number);
     const endDateArray = endDate.split('-').map(Number);
@@ -31,9 +31,9 @@ app.post('/send-email', async (req, res) => {
     const event = {
       start: [...startDateArray, ...startTimeArray],
       end: [...endDateArray, ...endTimeArray],
-      title: 'Reserva',
+      title:`Você reservou ${nomeReserva}`,
       description: 'Sua reserva foi confirmada.',
-      location: 'Local da reserva',
+      location:   `DI UERN`,
       organizer: { email: 'ambitechdi@gmail.com', name: 'Ambitech' },
       method: 'REQUEST',
       status: 'CONFIRMED',
